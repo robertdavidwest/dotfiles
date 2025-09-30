@@ -1,0 +1,62 @@
+[default]
+azure_tenant_id=803a6c90-ec72-4384-b2c0-1a376841a04b
+azure_app_id_uri=https://signin.aws.amazon.com/saml\#3
+azure_default_username=robert.west@talkiatry.com
+azure_default_role_arn=arn:aws:iam::541682086436:role/aws-prod-sso-data-dev
+azure_default_duration_hours=4
+azure_default_remember_me=true
+region=us-east-1
+s3 =
+    max_concurrent_requests = 1000
+
+[profile prod]
+azure_tenant_id=803a6c90-ec72-4384-b2c0-1a376841a04b
+azure_app_id_uri=https://signin.aws.amazon.com/saml\#3
+azure_default_username=robert.west@talkiatry.com
+azure_default_role_arn=arn:aws:iam::541682086436:role/aws-prod-sso-data-dev
+azure_default_duration_hours=4
+azure_default_remember_me=true
+region=us-east-1
+s3 =
+    max_concurrent_requests = 100
+
+[profile prod_elevated]
+azure_tenant_id=803a6c90-ec72-4384-b2c0-1a376841a04b
+azure_app_id_uri=https://signin.aws.amazon.com/saml\#3
+azure_default_username=robert.west@talkiatry.com
+azure_default_role_arn=arn:aws:iam::541682086436:role/aws-prod-sso-data-dev-elevated
+azure_default_duration_hours=1
+azure_default_remember_me=true
+region=us-east-1
+
+
+[profile staging]
+azure_tenant_id=803a6c90-ec72-4384-b2c0-1a376841a04b
+azure_app_id_uri=a0c8a73b-e354-4689-8512-b03a110dd4ac
+azure_default_username=robert.west@talkiatry.com
+azure_default_role_arn=arn:aws:iam::754811841429:role/aws-staging-sso-admin
+#azure_default_role_arn=arn:aws:iam::754811841429:role/aws-staging-sso-data
+azure_default_duration_hours=4
+azure_default_remember_me=true
+region=us-east-1
+
+[profile stage]
+azure_tenant_id=803a6c90-ec72-4384-b2c0-1a376841a04b
+azure_app_id_uri=ec037a66-b91d-4b71-ae2e-f75bfffd38d5
+azure_default_username=robert.west@talkiatry.com
+azure_default_role_arn=arn:aws:iam::866444159554:role/aws-staging-sso-admin
+#azure_default_role_arn=arn:aws:iam::866444159554:role/aws-staging-sso-data
+azure_default_duration_hours=1
+azure_default_remember_me=true
+region=us-east-1
+
+
+[profile stage_rw]
+azure_tenant_id=803a6c90-ec72-4384-b2c0-1a376841a04b
+azure_app_id_uri=ec037a66-b91d-4b71-ae2e-f75bfffd38d5
+azure_default_username=robert.west@talkiatry.com
+azure_default_role_arn=arn:aws:iam::866444159554:role/aws-stage-sso-talkiatry-rds-read-write
+#azure_default_role_arn=arn:aws:iam::866444159554:role/aws-staging-sso-data
+azure_default_duration_hours=1
+azure_default_remember_me=true
+region=us-east-1
