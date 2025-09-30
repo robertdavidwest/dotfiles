@@ -51,6 +51,7 @@ brew "harfbuzz"
 brew "libtiff"
 
 # GUI Applications
+cask "claude-code"
 cask "docker-desktop"
 cask "warp"
 
