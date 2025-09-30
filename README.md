@@ -24,6 +24,47 @@ This will:
 - Clone and set up my neovim configuration from [init.lua](https://github.com/robertdavidwest/init.lua)
 - Apply all dotfiles (.zshrc, .gitconfig, .tmux.conf, etc.)
 
+**Note**: If the script encounters errors during package installation, you may need to manually apply the dotfiles:
+
+```bash
+chezmoi apply
+```
+
+### Setup SSH Keys for GitHub
+
+Generate and add SSH keys to your GitHub account:
+
+```bash
+# Generate SSH key
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# Copy public key to clipboard
+cat ~/.ssh/id_ed25519.pub | pbcopy
+```
+
+Then add the key to GitHub at https://github.com/settings/keys
+
+Test the connection:
+```bash
+ssh -T git@github.com
+```
+
+### Complete Neovim Setup
+
+The neovim config has been cloned to `~/.config/nvim`, but requires additional setup. Follow the instructions in the [init.lua README](https://github.com/robertdavidwest/init.lua) to install Packer and plugins.
+
+If the `markdown-preview.nvim` plugin fails to install during `:PackerSync`, run this in neovim:
+```vim
+:call mkdp#util#install()
+```
+
+### Configure Warp Terminal Background
+
+Set the terminal background image in Warp:
+1. Open Warp settings (Cmd+,)
+2. Navigate to Appearance → Background
+3. Set background image path to: `~/.config/nvim/terminal_backgrounds/triforce_background.jp`
+
 ## What's included
 
 - **Shell**: zsh configuration
