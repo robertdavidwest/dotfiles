@@ -4,6 +4,14 @@ set -e
 
 echo "🚀 Setting up your Mac..."
 
+# Install Oh My Zsh if not already installed
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "📦 Installing Oh My Zsh..."
+    RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+    echo "✅ Oh My Zsh already installed"
+fi
+
 # Install Homebrew if not already installed
 if ! command -v brew &> /dev/null; then
     echo "📦 Installing Homebrew..."
@@ -22,10 +30,24 @@ fi
 echo "📦 Installing packages from Brewfile..."
 brew bundle --file={{ .chezmoi.sourceDir }}/Brewfile
 
+# Link node@20 to make npm available
+if brew list node@20 &> /dev/null; then
+    echo "🔗 Linking node@20..."
+    brew link node@20
+fi
+
 # Install fzf key bindings and fuzzy completion
 if command -v fzf &> /dev/null; then
     echo "🔑 Setting up fzf key bindings..."
     $(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
+fi
+
+# Install aws-azure-login globally via npm
+if command -v npm &> /dev/null; then
+    echo "📦 Installing aws-azure-login..."
+    npm install -g aws-azure-login
+else
+    echo "⚠️  npm not found, skipping aws-azure-login installation"
 fi
 
 echo "✅ Setup complete!"
