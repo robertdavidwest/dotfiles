@@ -14,6 +14,8 @@ brew "tree"
 brew "zoxide"
 
 # Development tools
+brew "docker"
+brew "docker-compose"
 brew "neovim"
 brew "lazygit"
 brew "tmux"
@@ -36,6 +38,7 @@ brew "databricks/tap/databricks"
 
 # Databases
 brew "postgresql@14", restart_service: :changed
+brew "postgresql@17"  # Latest version for psql client
 
 # Other tools
 brew "apache-spark"
@@ -46,6 +49,10 @@ brew "glib"
 brew "cairo"
 brew "harfbuzz"
 brew "libtiff"
+
+# GUI Applications
+cask "docker-desktop"
+cask "warp"
 
 # VSCode extensions
 vscode "anthropic.claude-code"

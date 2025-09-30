@@ -27,6 +27,12 @@ This will:
 - **Package Management**: Brewfile with all homebrew packages and VSCode extensions
 - **Tools**: fzf, ripgrep, lazygit, zoxide, and more
 
+## Manual installations
+
+After running the automated setup, install these manually:
+
+- **[Magnet](https://apps.apple.com/us/app/magnet/id441258766)** - Window management (Mac App Store)
+
 ## Manual updates
 
 After the initial setup, manage your dotfiles with:
