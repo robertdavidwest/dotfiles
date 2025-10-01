@@ -52,4 +52,5 @@ brew "libtiff"
 # GUI Applications
 cask "claude-code"
 cask "docker-desktop"
+cask "homerow"
 cask "warp"
