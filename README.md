@@ -97,3 +97,11 @@ chezmoi update
 # Edit a file
 chezmoi edit ~/.zshrc
 ```
+
+### Installing new packages after initial setup
+
+If you add new packages to the Brewfile and have already run the initial setup on a machine, install them with:
+
+```bash
+brew bundle --file=~/.local/share/chezmoi/Brewfile
+```
