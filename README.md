@@ -65,6 +65,13 @@ Set the terminal background image in Warp:
 2. Navigate to Appearance → Background
 3. Set background image path to: `~/.config/nvim/terminal_backgrounds/triforce_background.jp`
 
+### Set up Homerow
+
+Homerow preferences are synced via chezmoi, but you need to grant it accessibility permissions:
+1. Open Homerow (it should be installed via Brewfile)
+2. When prompted, grant Accessibility permissions in System Settings → Privacy & Security → Accessibility
+3. Your keyboard shortcuts will be automatically configured
+
 ## What's included
 
 - **Shell**: zsh configuration
