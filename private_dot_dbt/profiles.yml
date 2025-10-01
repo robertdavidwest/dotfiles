@@ -1,0 +1,28 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: pra18133.us-east-1
+      user: robert.west@talkiatry.com
+      database: analytics_dev
+      warehouse: analytics_wh
+      schema: dbt_rwest
+      role: data_role
+      threads: 8
+      authenticator: externalbrowser
+      client_session_keep_alive: False
+
+    #prod:
+      #type: snowflake
+      #account: pra18133.us-east-1
+      #user: robert.west@talkiatry.com
+      #database: analytics
+      #warehouse: transforming
+      #schema: public
+      #role: dbt_role
+      #threads: 16
+      #authenticator: externalbrowser
+      #client_session_keep_alive: False
+      #salt_mask_varchar: "{{env_var('DBT_ENV_SALT_MASK_VARCHAR')}}"
+      #salt_mask_numeric_id: "{{ env_var('DBT_ENV_SALT_MASK_NUMERIC_ID') }}"
